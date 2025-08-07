@@ -57,33 +57,33 @@ export default function EventsScreen() {
   };
 
   return (
-    <SafeAreaView className="flex-1 bg-gray-50">
-      <View className="px-4 py-6 bg-purple-600">
-        <Text className="text-white text-2xl font-bold">Events & Meetings</Text>
-        <Text className="text-purple-100 mt-1">Manage your event participation</Text>
+    <SafeAreaView className="flex-1 bg-gray-50 pb-16">
+      <View className="px-4 py-6 bg-green-800">
+        <Text className="text-white text-2xl font-bold">Verdinho</Text>
+        <Text className="text-green-100 mt-1">Gerencie sua participação em eventos na UNAMA</Text>
       </View>
 
       <View className="px-4 py-4">
         <View className="flex-row gap-3 mb-4">
           <TouchableOpacity
-            className="flex-1 bg-purple-600 py-3 rounded-lg flex-row items-center justify-center"
-            onPress={() => router.push("/(tabs)/events/qrcode")}
+            className="flex-1 bg-green-800 py-3 rounded-lg flex-row items-center justify-center"
+            onPress={() => router.push("/(tabs)/verdinho/qrcode")}
           >
             <IconSymbol name="qrcode" size={18} color="white" />
-            <Text className="text-white font-semibold ml-2">My QR Code</Text>
+            <Text className="text-white font-semibold ml-2">Meu código</Text>
           </TouchableOpacity>
           <TouchableOpacity
             className="flex-1 bg-gray-600 py-3 rounded-lg flex-row items-center justify-center"
-            onPress={() => router.push("/(tabs)/events/history")}
+            onPress={() => router.push("/(tabs)/verdinho/historico")}
           >
             <IconSymbol name="clock" size={18} color="white" />
-            <Text className="text-white font-semibold ml-2">History</Text>
+            <Text className="text-white font-semibold ml-2">Histórico</Text>
           </TouchableOpacity>
         </View>
       </View>
 
       <ScrollView className="flex-1 px-4">
-        <Text className="text-lg font-semibold text-gray-800 mb-4">Upcoming Events</Text>
+        <Text className="text-lg font-semibold text-gray-800 mb-4">Eventos futuros</Text>
 
         {upcomingEvents.map((event) => (
           <View key={event.id} className="bg-white rounded-lg shadow-sm mb-4 overflow-hidden">
@@ -112,8 +112,8 @@ export default function EventsScreen() {
                 </View>
               </View>
 
-              <TouchableOpacity className="bg-purple-50 border border-purple-200 py-2 px-4 rounded-lg mt-4">
-                <Text className="text-purple-700 font-medium text-center">Register for Event</Text>
+              <TouchableOpacity className="bg-green-50 border border-green-200 py-2 px-4 rounded-lg mt-4">
+                <Text className="text-green-700 font-medium text-center">Marcar presença</Text>
               </TouchableOpacity>
             </View>
           </View>

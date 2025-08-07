@@ -28,38 +28,47 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen
-        name="labs"
+        name="(meu-curso)"
         options={{
-          title: "Laboratórios",
-          tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name="calendar" color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="classes"
-        options={{
-          title: "Disciplinas",
+          title: "Meu curso",
           tabBarIcon: ({ color }) => (
             <IconSymbol size={28} name="book" color={color} />
           ),
         }}
       />
       <Tabs.Screen
-        name="events"
+        name="laboratorios"
         options={{
-          title: "Eventos",
+          title: "Laboratorios",
           tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name="checkmark.seal.fill" color={color} />
+            <IconSymbol size={28} name="calendar" color={color} />
           ),
         }}
       />
       <Tabs.Screen
-        name="services"
+        name="verdinho"
+        options={{
+          title: "Verdinho",
+          tabBarIcon: ({ color }) => (
+            <IconSymbol size={28} name="qrcode.viewfinder" color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="atendimento"
         options={{
           title: "Atendimento",
           tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name="checkmark.seal.fill" color={color} />
+            <IconSymbol size={28} name="person.crop.rectangle" color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="provas"
+        options={{
+          title: "Provas",
+          tabBarIcon: ({ color }) => (
+            <IconSymbol size={28} name="doc.plaintext" color={color} />
           ),
         }}
       />

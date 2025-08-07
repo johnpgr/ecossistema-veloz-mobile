@@ -7,8 +7,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 const labData = [
   {
     id: 1,
-    name: 'Computer Lab A',
-    room: 'Room 101',
+    name: 'Sala L101',
+    room: 'L101',
     schedule: [
       { time: '08:00-10:00', teacher: 'Dr. Smith', class: 'Programming I', available: false },
       { time: '10:00-12:00', teacher: 'Prof. Johnson', class: 'Data Structures', available: false },
@@ -18,8 +18,8 @@ const labData = [
   },
   {
     id: 2,
-    name: 'Computer Lab B',
-    room: 'Room 102',
+    name: 'Sala L102',
+    room: 'L102',
     schedule: [
       { time: '08:00-10:00', teacher: '', class: '', available: true },
       { time: '10:00-12:00', teacher: 'Dr. Wilson', class: 'Database Systems', available: false },
@@ -29,8 +29,8 @@ const labData = [
   },
   {
     id: 3,
-    name: 'Computer Lab C',
-    room: 'Room 103',
+    name: 'Sala L103',
+    room: 'L103',
     schedule: [
       { time: '08:00-10:00', teacher: 'Dr. Miller', class: 'AI & Machine Learning', available: false },
       { time: '10:00-12:00', teacher: '', class: '', available: true },
@@ -40,13 +40,19 @@ const labData = [
   }
 ];
 
-export default function LabManagementScreen() {
-  const [selectedDate, setSelectedDate] = useState(new Date().toDateString());
+const dateTimeFormatPTBR = new Intl.DateTimeFormat('pt-BR', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric'
+});
+
+export default function GestaoLaboratoriosScreen() {
+  const [selectedDate, setSelectedDate] = useState(() => dateTimeFormatPTBR.format(new Date()));
 
   return (
-    <SafeAreaView className="flex-1 bg-gray-50">
+    <SafeAreaView className="flex-1 bg-gray-50 pb-16">
       <View className="px-4 py-6 bg-blue-600">
-        <Text className="text-white text-2xl font-bold">Laboratory Management</Text>
+        <Text className="text-white text-2xl font-bold">Gestão de laboratórios</Text>
         <Text className="text-blue-100 mt-1">{selectedDate}</Text>
       </View>
 
@@ -58,7 +64,6 @@ export default function LabManagementScreen() {
                 <IconSymbol name="desktopcomputer" color="#3b82f6" size={16} />
                 <Text className="text-lg font-semibold text-gray-800 ml-2">{lab.name}</Text>
               </View>
-              <Text className="text-gray-600 text-sm mt-1">{lab.room}</Text>
             </View>
 
             <View className="p-4">
@@ -70,8 +75,10 @@ export default function LabManagementScreen() {
                   </View>
 
                   {slot.available ? (
-                    <View className="bg-green-100 px-3 py-1 rounded-full">
-                      <Text className="text-green-700 text-sm font-medium">Available</Text>
+                    <View className="flex-row flex-1">
+                      <View className="bg-green-100 px-3 py-1 rounded-full">
+                        <Text className="text-green-700 text-sm font-medium">Disponível</Text>
+                      </View>
                     </View>
                   ) : (
                     <View className="flex-1 ml-4">
