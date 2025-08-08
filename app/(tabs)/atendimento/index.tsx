@@ -45,7 +45,7 @@ export default function ServicesScreen() {
 
       <ScrollView className="flex-1 px-4 py-4">
         <TouchableOpacity
-          className="bg-green-800 py-4 px-6 rounded-lg mb-6 flex-row items-center justify-center"
+          className="bg-green-800 py-3 px-6 rounded-lg mb-6 flex-row items-center justify-center"
           onPress={() => router.push('/(tabs)/atendimento/form')}
         >
           <IconSymbol name="doc.text" size={20} color="white" />

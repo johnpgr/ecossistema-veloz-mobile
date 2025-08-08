@@ -1,14 +1,14 @@
 import { IconSymbol } from '@/components/ui/IconSymbol';
 import React, { useState } from 'react';
-import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
+import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 const testData = [
   {
     id: 1,
-    subject: 'Advanced Programming',
+    subject: 'Tópicos Avançados em Ciência da Computação',
     code: 'CS301',
-    type: 'Midterm Exam',
+    type: '1ª Avaliação',
     date: '2024-02-15',
     time: '09:00-11:00',
     room: 'Room 205',
@@ -17,9 +17,9 @@ const testData = [
   },
   {
     id: 2,
-    subject: 'Database Systems',
+    subject: 'Banco de Dados',
     code: 'CS302',
-    type: 'Quiz',
+    type: 'Exercicios',
     date: '2024-02-10',
     time: '14:00-15:00',
     room: 'Room 301',
@@ -28,9 +28,9 @@ const testData = [
   },
   {
     id: 3,
-    subject: 'Software Engineering',
+    subject: 'Engenharia de Software',
     code: 'CS303',
-    type: 'Project Presentation',
+    type: 'Trabalho',
     date: '2024-02-20',
     time: '14:00-17:00',
     room: 'Room 102',
@@ -39,20 +39,21 @@ const testData = [
   },
   {
     id: 4,
-    subject: 'Computer Networks',
+    subject: 'Redes de Computadores',
     code: 'CS304',
-    type: 'Lab Test',
+    type: '1ª Avaliação',
     date: '2024-02-05',
     time: '10:00-12:00',
     room: 'Room 203',
     status: 'completed',
-    score: '85/100'
+    score: '8/10',
+    daysLeft: 0
   },
   {
     id: 5,
     subject: 'Machine Learning',
     code: 'CS305',
-    type: 'Assignment Due',
+    type: 'Trabalho',
     date: '2024-02-12',
     time: '23:59',
     room: 'Online Submission',
@@ -70,36 +71,34 @@ export default function TestCalendarScreen() {
     return true;
   });
 
-  const getStatusColor = (status, daysLeft) => {
+  const getStatusColor = (status: string, daysLeft: number) => {
     if (status === 'completed') return 'text-green-600';
     if (daysLeft <= 3) return 'text-red-600';
     if (daysLeft <= 7) return 'text-yellow-600';
     return 'text-blue-600';
   };
 
-  const getStatusIcon = (status, daysLeft) => {
+  const getStatusIcon = (status: string, daysLeft: number) => {
     if (status === 'completed') return <IconSymbol name="checkmark.circle" size={16} color="#16a34a" />;
     if (daysLeft <= 3) return <IconSymbol name="exclamationmark.triangle" size={16} color="#dc2626" />;
     return <IconSymbol name="clock" size={16} color="#3b82f6" />;
   };
 
-  const getTypeColor = (type) => {
-    switch (type.toLowerCase()) {
-      case 'midterm exam': return 'bg-red-100 text-red-700';
-      case 'final exam': return 'bg-red-100 text-red-700';
-      case 'quiz': return 'bg-blue-100 text-blue-700';
-      case 'lab test': return 'bg-purple-100 text-purple-700';
-      case 'project presentation': return 'bg-green-100 text-green-700';
-      case 'assignment due': return 'bg-orange-100 text-orange-700';
+  const getTypeColor = (type: string) => {
+    switch (type) {
+      case '1ª Avaliação': return 'bg-red-100 text-red-700';
+      case '2ª Avaliação': return 'bg-red-100 text-red-700';
+      case 'Trabalho': return 'bg-blue-100 text-blue-700';
+      case 'Exercicios': return 'bg-orange-100 text-orange-700';
       default: return 'bg-gray-100 text-gray-700';
     }
   };
 
   return (
-    <SafeAreaView className="flex-1 bg-gray-50">
+    <SafeAreaView className="flex-1 pb-16 bg-gray-50">
       <View className="px-4 py-6 bg-red-600">
-        <Text className="text-white text-2xl font-bold">Test Calendar</Text>
-        <Text className="text-red-100 mt-1">Track your exams and assignments</Text>
+        <Text className="text-white text-2xl font-bold">Calendário de provas</Text>
+        <Text className="text-red-100 mt-1">Acompanhe suas provas</Text>
       </View>
 
       <View className="px-4 py-4">
@@ -109,7 +108,7 @@ export default function TestCalendarScreen() {
             onPress={() => setFilter('all')}
           >
             <Text className={`text-center font-medium ${filter === 'all' ? 'text-white' : 'text-gray-600'}`}>
-              All
+              Tudo
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
@@ -117,7 +116,7 @@ export default function TestCalendarScreen() {
             onPress={() => setFilter('upcoming')}
           >
             <Text className={`text-center font-medium ${filter === 'upcoming' ? 'text-white' : 'text-gray-600'}`}>
-              Upcoming
+              Por vir
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
@@ -125,7 +124,7 @@ export default function TestCalendarScreen() {
             onPress={() => setFilter('completed')}
           >
             <Text className={`text-center font-medium ${filter === 'completed' ? 'text-white' : 'text-gray-600'}`}>
-              Completed
+              Realizadas
             </Text>
           </TouchableOpacity>
         </View>
@@ -165,17 +164,17 @@ export default function TestCalendarScreen() {
                   {getStatusIcon(test.status, test.daysLeft)}
                   <Text className={`ml-2 font-medium ${getStatusColor(test.status, test.daysLeft)}`}>
                     {test.status === 'completed' 
-                      ? `Completed - Score: ${test.score}`
+                      ? `Realizado - Nota: ${test.score}`
                       : test.daysLeft === 1 
-                        ? '1 day left'
-                        : `${test.daysLeft} days left`
+                        ? '1 dia restante'
+                        : `${test.daysLeft} dias restantes`
                     }
                   </Text>
                 </View>
                 
                 {test.status === 'upcoming' && test.daysLeft <= 3 && (
                   <View className="bg-red-50 px-2 py-1 rounded-full">
-                    <Text className="text-red-700 text-xs font-medium">URGENT</Text>
+                    <Text className="text-red-700 text-xs font-medium">Urgente</Text>
                   </View>
                 )}
               </View>

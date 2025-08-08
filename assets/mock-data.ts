@@ -1,7 +1,7 @@
 export const mockCursos = [
   {
     id: 1,
-    name: 'Tópicos avançados de programação',
+    name: 'Tópicos Avançados em Ciência da Computação	',
     code: 'CS301',
     teacher: 'Dr. Sarah Johnson',
     room: 'L205',
@@ -20,7 +20,7 @@ export const mockCursos = [
   },
   {
     id: 2,
-    name: 'Sistemas de Banco de Dados',
+    name: 'Banco de Dados',
     code: 'CS302',
     teacher: 'Prof. Michael Brown',
     room: 'L301',
@@ -92,7 +92,11 @@ export const mockCursos = [
 ];
 
 export const currentStudent = {
+  enroll: "2025123456",
+  name: "João Silva",
   course: "Ciência da Computação",
   period: "2025.2",
+  period_absolute: "6º período",
   shift: "Manhã",
+  course_chief: "Dr. Carlos Alberto",
 }

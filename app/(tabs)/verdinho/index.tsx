@@ -1,60 +1,46 @@
 import { IconSymbol } from "@/components/ui/IconSymbol";
-import { useNavigation, useRouter } from "expo-router";
+import { useRouter } from "expo-router";
 import React from "react";
-import { View, Text, ScrollView, TouchableOpacity } from "react-native";
+import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const upcomingEvents = [
   {
     id: 1,
-    title: "Computer Science Seminar",
+    title: "Seminário de Ciência da Computação",
     date: "2024-01-25",
     time: "14:00",
-    location: "Auditorium A",
-    description: "Latest trends in AI and Machine Learning",
-    type: "seminar"
+    location: "Auditório A",
+    description: "Últimas tendências em IA e Aprendizado de Máquina",
   },
   {
     id: 2,
-    title: "Career Fair 2024",
+    title: "Feira de Carreiras 2025",
     date: "2024-01-28",
     time: "09:00",
-    location: "Main Hall",
-    description: "Meet with top tech companies",
-    type: "career"
+    location: "Salão Principal",
+    description: "Encontre as principais empresas de tecnologia",
   },
   {
     id: 3,
-    title: "Student Council Meeting",
+    title: "Reunião do Conselho Estudantil",
     date: "2024-01-30",
     time: "16:00",
-    location: "Conference Room B",
-    description: "Monthly student council meeting",
-    type: "meeting"
+    location: "Sala de Conferência B",
+    description: "Reunião mensal do conselho estudantil",
   },
   {
     id: 4,
-    title: "Programming Competition",
+    title: "Competição de Programação",
     date: "2024-02-02",
     time: "10:00",
-    location: "Computer Lab A",
-    description: "Annual programming contest",
-    type: "competition"
+    location: "Laboratório de Computação A",
+    description: "Competição anual de programação",
   }
 ];
 
 export default function EventsScreen() {
   const router = useRouter()
-
-  const getEventTypeColor = (type) => {
-    switch (type) {
-      case "seminar": return "bg-blue-100 text-blue-700";
-      case "career": return "bg-green-100 text-green-700";
-      case "meeting": return "bg-purple-100 text-purple-700";
-      case "competition": return "bg-orange-100 text-orange-700";
-      default: return "bg-gray-100 text-gray-700";
-    }
-  };
 
   return (
     <SafeAreaView className="flex-1 bg-gray-50 pb-16">
@@ -90,9 +76,6 @@ export default function EventsScreen() {
             <View className="p-4">
               <View className="flex-row items-start justify-between mb-3">
                 <Text className="text-lg font-semibold text-gray-800 flex-1">{event.title}</Text>
-                <View className={`px-2 py-1 rounded-full ${getEventTypeColor(event.type)}`}>
-                  <Text className="text-xs font-medium capitalize">{event.type}</Text>
-                </View>
               </View>
 
               <Text className="text-gray-600 text-sm mb-3">{event.description}</Text>

@@ -1,9 +1,9 @@
 import { IconSymbol } from '@/components/ui/IconSymbol';
 import { useRouter } from 'expo-router';
 import React from 'react';
-import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
+import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { mockCursos, currentStudent } from './mock-data';
+import { currentStudent, mockCursos } from '../../../assets/mock-data';
 import { getAttendanceColor, getTestScoreColor } from './common';
 
 export default function MeuCursoScreen() {
