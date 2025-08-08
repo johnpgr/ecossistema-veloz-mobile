@@ -6,9 +6,9 @@ export const mockCursos = [
     teacher: 'Dr. Sarah Johnson',
     room: 'L205',
     schedule: [
-      { day: 'Monday', time: '09:00-11:00' },
-      { day: 'Wednesday', time: '09:00-11:00' },
-      { day: 'Friday', time: '09:00-11:00' }
+      { day: 'Segunda-feira', time: '09:00-11:00' },
+      { day: 'Quarta-feira', time: '09:00-11:00' },
+      { day: 'Sexta-feira', time: '09:00-11:00' }
     ],
     maxAbsences: 15,
     currentAbsences: 3,
@@ -25,8 +25,8 @@ export const mockCursos = [
     teacher: 'Prof. Michael Brown',
     room: 'L301',
     schedule: [
-      { day: 'Tuesday', time: '14:00-16:00' },
-      { day: 'Thursday', time: '14:00-16:00' }
+      { day: 'Terça-feira', time: '14:00-16:00' },
+      { day: 'Quinta-feira', time: '14:00-16:00' }
     ],
     maxAbsences: 10,
     currentAbsences: 1,
@@ -41,10 +41,10 @@ export const mockCursos = [
     name: 'Engenharia de Software',
     code: 'CS303',
     teacher: 'Dr. Emily Davis',
-    room: 'Room 102',
+    room: 'L102',
     schedule: [
-      { day: 'Monday', time: '14:00-17:00' },
-      { day: 'Wednesday', time: '14:00-17:00' }
+      { day: 'Segunda-feira', time: '14:00-17:00' },
+      { day: 'Quarta-feira', time: '14:00-17:00' }
     ],
     maxAbsences: 20,
     currentAbsences: 7,
@@ -59,10 +59,10 @@ export const mockCursos = [
     name: 'Redes de computadores',
     code: 'CS304',
     teacher: 'Prof. James Wilson',
-    room: 'Room 203',
+    room: 'L203',
     schedule: [
-      { day: 'Tuesday', time: '10:00-12:00' },
-      { day: 'Thursday', time: '10:00-12:00' }
+      { day: 'Terça-feira', time: '10:00-12:00' },
+      { day: 'Quinta-feira', time: '10:00-12:00' }
     ],
     maxAbsences: 15,
     currentAbsences: 12,
@@ -77,9 +77,9 @@ export const mockCursos = [
     name: 'Machine Learning',
     code: 'CS305',
     teacher: 'Dr. Lisa Garcia',
-    room: 'Room 401',
+    room: 'L401',
     schedule: [
-      { day: 'Friday', time: '14:00-17:00' }
+      { day: 'Sexta-feira', time: '14:00-17:00' }
     ],
     maxAbsences: 10,
     currentAbsences: 2,

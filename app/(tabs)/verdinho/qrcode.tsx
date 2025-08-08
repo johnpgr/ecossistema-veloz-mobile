@@ -1,6 +1,6 @@
+import { SafeAreaView } from "@/components/ui/SafeAreaView";
 import React from 'react';
-import { View, Text, Dimensions } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { Dimensions, Text, View } from 'react-native';
 import QRCode from 'react-native-qrcode-svg';
 
 const { width } = Dimensions.get('window');

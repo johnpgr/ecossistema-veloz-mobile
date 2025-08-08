@@ -1,7 +1,7 @@
 import { IconSymbol } from '@/components/ui/IconSymbol';
+import { SafeAreaView } from "@/components/ui/SafeAreaView";
 import React from 'react';
 import { ScrollView, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 const labData = [
   {
@@ -49,15 +49,15 @@ export default function GestaoLaboratoriosScreen() {
   const [currentDate] = React.useState(() => dateTimeFormatPTBR.format(new Date()));
 
   return (
-    <SafeAreaView className="flex-1 bg-gray-50 pb-16">
+    <SafeAreaView className="flex-1 bg-gray-50">
       <View className="px-4 py-6 bg-blue-600">
         <Text className="text-white text-2xl font-bold">Gestão de laboratórios</Text>
         <Text className="text-blue-100 mt-1">{currentDate}</Text>
       </View>
 
-      <ScrollView className="flex-1 px-4 py-4">
-        {labData.map((lab) => (
-          <View key={lab.id} className="bg-white rounded-lg shadow-sm mb-4 overflow-hidden">
+      <ScrollView className="flex-1 px-4 pt-4">
+        {labData.map((lab, index) => (
+          <View key={lab.id} className={`bg-white rounded-lg shadow-sm overflow-hidden ${index !== labData.length - 1 ? 'mb-4' : 'mb-8'}`}>
             <View className="bg-blue-50 px-4 py-3 border-b border-gray-200">
               <View className="flex-row items-center">
                 <IconSymbol name="desktopcomputer" color="#3b82f6" size={16} />

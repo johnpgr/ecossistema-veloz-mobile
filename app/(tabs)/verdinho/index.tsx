@@ -1,8 +1,8 @@
 import { IconSymbol } from "@/components/ui/IconSymbol";
+import { SafeAreaView } from "@/components/ui/SafeAreaView";
 import { useRouter } from "expo-router";
 import React from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 const upcomingEvents = [
   {
@@ -43,14 +43,14 @@ export default function EventsScreen() {
   const router = useRouter()
 
   return (
-    <SafeAreaView className="flex-1 bg-gray-50 pb-16">
+    <SafeAreaView className="flex-1 bg-gray-50">
       <View className="px-4 py-6 bg-green-800">
         <Text className="text-white text-2xl font-bold">Verdinho</Text>
         <Text className="text-green-100 mt-1">Gerencie sua participação em eventos na UNAMA</Text>
       </View>
 
       <View className="px-4 py-4">
-        <View className="flex-row gap-3 mb-4">
+        <View className="flex-row gap-3">
           <TouchableOpacity
             className="flex-1 bg-green-800 py-3 rounded-lg flex-row items-center justify-center"
             onPress={() => router.push("/(tabs)/verdinho/qrcode")}
@@ -90,7 +90,7 @@ export default function EventsScreen() {
                   <Text className="text-gray-700 ml-2">{event.time}</Text>
                 </View>
                 <View className="flex-row items-center">
-                  <IconSymbol name="map" size={16} color="#6b7280" />
+                  <IconSymbol name="location" size={16} color="#6b7280" />
                   <Text className="text-gray-700 ml-2">{event.location}</Text>
                 </View>
               </View>

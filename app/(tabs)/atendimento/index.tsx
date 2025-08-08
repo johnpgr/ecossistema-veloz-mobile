@@ -1,21 +1,13 @@
 import { IconSymbol } from '@/components/ui/IconSymbol';
+import { SafeAreaView } from "@/components/ui/SafeAreaView";
 import { useRouter } from 'expo-router';
-import React, { useState } from 'react';
-import { View, Text, ScrollView, TouchableOpacity, TextInput, Alert } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-
-const serviceTypes = [
-  { id: 1, name: 'Academic Records', description: 'Request transcripts and certificates' },
-  { id: 2, name: 'Course Registration', description: 'Register for courses or make changes' },
-  { id: 3, name: 'Financial Aid', description: 'Apply for scholarships and financial assistance' },
-  { id: 4, name: 'Technical Support', description: 'IT and technical assistance requests' },
-  { id: 5, name: 'General Inquiry', description: 'Other academic or administrative requests' },
-];
+import React from 'react';
+import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
 
 const mockRequests = [
-  { id: 1, type: 'Academic Records', description: 'Transcript request for job application', status: 'deferido', date: '2024-01-15' },
-  { id: 2, type: 'Course Registration', description: 'Add Advanced Mathematics course', status: 'pendente', date: '2024-01-20' },
-  { id: 3, type: 'Technical Support', description: 'Password reset for student portal', status: 'pendente', date: '2024-01-22' },
+  { id: 1, type: 'Histórico Acadêmico', description: 'Solicitação de histórico para vaga de emprego', status: 'deferido', date: '2024-01-15' },
+  { id: 2, type: 'Matrícula em Disciplina', description: 'Adicionar disciplina de Matemática Avançada', status: 'pendente', date: '2024-01-20' },
+  { id: 3, type: 'Suporte Técnico', description: 'Redefinição de senha do portal do aluno', status: 'pendente', date: '2024-01-22' },
 ];
 
 export default function ServicesScreen() {

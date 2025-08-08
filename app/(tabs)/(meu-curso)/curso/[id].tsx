@@ -1,8 +1,8 @@
+import { mockCursos } from '@/assets/mock-data';
 import { IconSymbol } from '@/components/ui/IconSymbol';
+import { SafeAreaView } from '@/components/ui/SafeAreaView';
 import { useLocalSearchParams } from 'expo-router';
 import { ScrollView, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { mockCursos } from '../../../../assets/mock-data';
 import { getAttendanceColor, getTestScoreColor } from '../common';
 
 export default function CursoDetailsScreen() {
@@ -18,7 +18,7 @@ export default function CursoDetailsScreen() {
         <Text className="text-blue-100 mt-1">{curso.code}</Text>
       </View>
 
-      <ScrollView className="flex-1 px-4 py-4">
+      <ScrollView className="flex-1 px-4 mt-4">
         <View className="bg-white rounded-lg shadow-sm p-4 mb-4">
           <Text className="text-lg font-semibold text-gray-800 mb-4">Informações básicas</Text>
 

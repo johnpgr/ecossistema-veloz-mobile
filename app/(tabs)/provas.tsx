@@ -1,7 +1,7 @@
 import { IconSymbol } from '@/components/ui/IconSymbol';
+import { SafeAreaView } from "@/components/ui/SafeAreaView";
 import React, { useState } from 'react';
 import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 const testData = [
   {
@@ -11,7 +11,7 @@ const testData = [
     type: '1ª Avaliação',
     date: '2024-02-15',
     time: '09:00-11:00',
-    room: 'Room 205',
+    room: 'L205',
     status: 'upcoming',
     daysLeft: 8
   },
@@ -22,7 +22,7 @@ const testData = [
     type: 'Exercicios',
     date: '2024-02-10',
     time: '14:00-15:00',
-    room: 'Room 301',
+    room: 'L301',
     status: 'upcoming',
     daysLeft: 3
   },
@@ -33,7 +33,7 @@ const testData = [
     type: 'Trabalho',
     date: '2024-02-20',
     time: '14:00-17:00',
-    room: 'Room 102',
+    room: 'L102',
     status: 'upcoming',
     daysLeft: 13
   },
@@ -44,7 +44,7 @@ const testData = [
     type: '1ª Avaliação',
     date: '2024-02-05',
     time: '10:00-12:00',
-    room: 'Room 203',
+    room: 'L203',
     status: 'completed',
     score: '8/10',
     daysLeft: 0
@@ -56,7 +56,7 @@ const testData = [
     type: 'Trabalho',
     date: '2024-02-12',
     time: '23:59',
-    room: 'Online Submission',
+    room: 'DOL',
     status: 'upcoming',
     daysLeft: 5
   }
@@ -95,7 +95,7 @@ export default function TestCalendarScreen() {
   };
 
   return (
-    <SafeAreaView className="flex-1 pb-16 bg-gray-50">
+    <SafeAreaView className="flex-1 bg-gray-50">
       <View className="px-4 py-6 bg-red-600">
         <Text className="text-white text-2xl font-bold">Calendário de provas</Text>
         <Text className="text-red-100 mt-1">Acompanhe suas provas</Text>
